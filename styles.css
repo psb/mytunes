@@ -1,0 +1,131 @@
+html { 
+  background: url(space_image.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /*opacity: 0.4;*/
+}
+
+body {
+  font-family: helvetica;
+  text-align: center;
+  /*opacity: 1;*/
+}
+.heading td{ 
+  padding:5px 5px 0px 10px;
+  background-color: gray;
+  border-radius: 15px;
+
+}
+.close{
+  float: right;
+  margin-left: 10px;
+  background-color: black;
+  text-align: center;
+  width: 14px;
+  height: 14px;
+  border: 1px black solid;
+  border-radius: 20px;
+  color: red;
+  font-variant: small-caps;
+  padding-bottom: 5px;
+
+}
+
+.close:hover, .star:hover, .title:hover, .playListEntry{
+
+  cursor: pointer;
+}
+
+table{ 
+  border: 1px solid black;
+  background-color: white;
+  margin-top: 40px;
+  /*border-collapse: collapse;*/
+  border-radius: 15px;
+  padding: 10px;
+
+}
+
+td {
+  padding: 5px 5px;
+}
+button {
+  color: red;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  margin-top: -5px;
+
+  display:-webkit-box;
+  -webkit-box-orient:horizontal;
+  -webkit-box-pack:center;
+  -webkit-box-align:center;
+  display:inline-block;
+}
+
+.libraryContainer, .playerContainer {
+  float: left;
+  opacity: .7;
+  border-radius: 15px;
+}
+
+.libraryContainer {
+  width: 33%;
+}
+
+.title , .artist{
+  text-align: left;
+}
+
+.title {
+  width: 200px;
+}
+
+.playerContainer {
+  margin-top: 40px;
+  width: 33%;
+  opacity: .7;
+}
+.playListEntry{
+  border-radius: 10px;
+  background-color: gray;
+  padding: 5px;
+}
+
+.playlistContainer {
+  width: 230px;
+  float: right;
+  margin-right: 10%;
+  margin-top: 40px;
+  background-color: white;
+  opacity: .7;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+
+#close{
+  color: red;
+  margin: 5px;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+td.star {
+  width: 40px;
+}
+
+.star{
+  width: 5px;
+  height: 5px;
+  background: url(grey_star.png) no-repeat center;
+}
+
+.starred, .star:hover{
+  background: url(yellow_star.png) no-repeat center;
+}
+
+audio {
+  margin-top: 10px;
+}

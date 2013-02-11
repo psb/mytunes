@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
+  <script src="src/Songs.js"></script>
+  <script src="src/MasterView.js"></script>
+  <script src="src/PlayerView.js"></script>
+  <script src="src/LibraryView.js"></script>
+  <script src="src/LibraryEntryView.js"></script>
+  <script src="src/PlaylistEntryView.js"></script>
+  <script src="src/PlaylistView.js"></script>  
+  <script>
+    $(function(){
+      var songs = new Songs();
+
+      var init = function(data){
+        songs.reset(data);
+
+        var player = new PlayerView({collection: songs});
+        var library = new LibraryView({collection: songs});
+        var playlistView = new PlaylistView({collection: songs});
+
+        $(".libraryContainer").append(library.render());
+        $(".playerContainer").append(player.render());
+        $('.playlistContainer').append(playlistView.render());
+      };
+
+      $.ajax({
+        url: "src/data_json.js",
+        type: "GET",
+        dataType: 'json',
+        success: function(data){
+          init(data);
+        },
+        error: function(data){
+          console.log(data);
+        }
+      });
+        
+
+    });
+  </script>
+</head>
+<body>
+  <div>
+    <div class ="libraryContainer">
+    </div>
+    <div class = "playerContainer">
+
+    </div>
+    <div class = "playlistContainer">
+    </div>
+  </div>
+</body>
+</html>
